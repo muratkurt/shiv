@@ -163,6 +163,10 @@ SHIV_NODE_CAPRAZ=1        build debs on a Mac with no device attached
 
 Open an [issue](../../issues/new/choose). The form asks for your device, iOS version, jailbreak and shiv version — without those a report usually can't be acted on.
 
+## Credits
+
+Built with [Claude Code](https://claude.com/claude-code). Design, device testing and every release decision are mine.
+
 ## Licence
 
 Closed source. All rights reserved. The packages are free to install and use; redistribution and reverse engineering are not permitted.
