@@ -1,0 +1,19 @@
+name: Bug report
+description: Something is not working
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did and what you got instead.
+    validations:
+      required: true
+
+  - type: input
+    id: setup
+    attributes:
+      label: Setup (optional)
+      description: Helps a lot, but leave it blank if you are not sure.
+      placeholder: iPhone 15 Pro · iOS 17.0.3 · RootHide · shiv 2.2.0 · NewTerm
+    validations:
+      required: false
