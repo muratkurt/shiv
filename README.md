@@ -165,7 +165,7 @@ Open an [issue](../../issues/new/choose). The form asks for your device, iOS ver
 
 ## Credits
 
-Built with [Claude Code](https://claude.com/claude-code). Design, device testing and every release decision are mine.
+Built with [Claude Code](https://claude.com/claude-code).
 
 ## Licence
 
