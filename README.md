@@ -31,14 +31,14 @@ Built and used on iPhone 15 Pro (iOS 17.0.3, RootHide) and iPhone XS (iOS 16.1.1
 
 **OpenRouter** signs in through the browser — no key to copy — and reaches Claude, GPT, Gemini and Grok with one account.
 
-Also built in: DeepSeek · OpenAI · Moonshot (Kimi) · xAI (Grok) · Qwen · Z.ai (GLM) · Groq · Mistral · Together AI · a local Ollama or llama.cpp · any custom OpenAI-compatible endpoint.
+Also built in: DeepSeek · OpenAI · Moonshot (Kimi) · xAI (Grok) · Qwen · Z.ai (GLM) · Groq · Mistral · Together AI · Ollama or llama.cpp on a computer on your network · any custom OpenAI-compatible endpoint.
 
 ## What it does
 
 - **Reads and edits files, runs shell commands.** Shell commands and file writes always ask first; what counts as "ask every time" is set in `/permissions`.
 - **Sessions** are saved every turn. Resume the last one, pick an earlier one, or rewind the conversation to an earlier point.
 - **Profiles** keep several providers side by side, switchable without losing the conversation.
-- **Tweak and reverse engineering tools** — class and method lookup from the device's own dyld cache, a live class dump from a running app, FairPlay decryption on the phone, and an environment probe that runs each tool instead of looking for it.
+- **Tweak and reverse engineering tools** — class and method lookup from the device's own dyld cache, a live class dump from a running app, reading what's on screen in a running app, FairPlay decryption on the phone, and an environment probe that runs each tool instead of looking for it.
 
 ## Getting started
 
@@ -116,15 +116,29 @@ On PATH after install:
 shiv-sinif <name>          class/method search from the dyld cache (no frida)
 shiv-oku <bundle-id>       live ObjC class dump from a running app (frida)
 shiv-cek <bundle-id>       FairPlay decrypt, on the device itself (frida)
+shiv-ekran <bundle-id>     what is on screen in a running app (frida)
 shiv-frida-kur             diagnose frida: binary, package, agent, daemon,
                            conflicts and leftovers
 ```
 
 `TWEAK.md` ships with the package and holds the recipes the assistant follows.
 
+### Reading the screen
+
+```
+shiv-ekran <bundle-id>            what is on screen now
+shiv-ekran --izle 40 <bundle-id>  record every page you open, for 40 s
+```
+
+The app has to be in front. Stay in it until the phone vibrates; the terminal comes back by itself.
+
+In record mode, open the pages one by one and wait for the vibration on each. Every page is saved on its own: `/var/mobile/tw/ekran-<bundle-id>-01.txt`, `-02.txt` …
+
+You don't have to type it. Ask shiv to read an app from the screen and it runs it.
+
 ### frida
 
-`shiv-oku` and `shiv-cek` need **frida-server 16.x** — the client is linked against frida-core 16, so a 17.x server cannot talk to it.
+`shiv-oku`, `shiv-cek` and `shiv-ekran` need **frida-server 16.x** — the client is linked against frida-core 16, so a 17.x server cannot talk to it.
 
 `shiv-frida-kur` reports what you have and changes nothing. It installs the matching 16.1.4 only when you ask:
 
