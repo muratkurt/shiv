@@ -4,8 +4,6 @@ An AI assistant that runs in your terminal, on a jailbroken iPhone.
 
 Talk to a model, let it run commands, keep the conversation across sessions. Sign in to OpenRouter through the browser, or paste your own key for any other provider. Since 2.0 it can also build tweaks, end to end, without leaving the phone.
 
-**This repository is for releases and bug reports. shiv is closed source — no code here.**
-
 ## Install
 
 Add the repo in Sileo:
