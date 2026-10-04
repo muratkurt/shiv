@@ -27,4 +27,4 @@ Built with [Claude Code](https://claude.com/claude-code).
 
 ## Licence
 
-Closed source. All rights reserved. Free to install and use; redistribution and reverse engineering are not permitted.
+[MIT](LICENSE).
